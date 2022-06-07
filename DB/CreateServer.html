@@ -1,0 +1,36 @@
+{%  extends 'base.html' %}
+
+
+{%  block content %}
+<form action = "{{ request.path }}" method = "post"]>
+     <label for="SiteName">SiteName</label><br>
+    <input type="text" name="SiteName" placeholder="Site Name" /><br>
+
+    <label for = "serverName">Server Name</label><br>
+    <input type = "text" name="serverName" placeholder="Server Name" /><br>
+
+    <label for ="OS">Operation System</label><br>
+    <input type="text" name="OS" placeholder="Operation System" /><br>
+
+    <label for ="HOST_IP">Host IP Address</label><br>
+    <input type="text" name="HOST_IP" placeholder="Host IP Address"/> <br>
+
+    <label for="HOSTType">Host Type</label><br>
+    <input type="text" name="HOSTType" placeholder="Host Type"><br>
+
+    <label  for="HOST_ILOM_IP">Host ILOM IP</label><br>
+    <input type="text" name="HOST_ILOM_IP"><br>
+
+    <input type = "submit" value = "Submit" />
+</form>
+
+{% endblock %}
+
+    <!--   self.SiteName = SiteName
+    self.serverName = serverName
+    self.IPAddress = IPAddress
+    self.os = OS
+    self.HOST_IP = HOST_IP
+    self.HOSTType = HOSTType
+    self.HOST_ILOM_IP = HOST_ILOM_IP
+    self.Date_Added = Date_Added-->
