@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'navbar.html' %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+    <form method="POST">
+        <h3 align="center">Add New Site</h3>
+        <div class="form-group">
+            <label for="siteName"> Site Name</label>
+            <input type="text" class="form-control" id="siteName" name="siteName" placeholder="Enter Site Name" autofocus/>
+        </div>
+        <div class="form-group">
+            <label for="SysAdminName"> Responsible SysAdmin</label>
+            <input type="text" class="form-control" id="SysAdminName" name="SysAdminName" placeholder="Enter SyYAdmin Name"/>
+        </div>
 
-</body>
-</html>
-
+        <br/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
 /*
 class Sites(db.Model):
     id = db.Column(db.Integer, primary_key=True)
