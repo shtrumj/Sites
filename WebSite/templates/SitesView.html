@@ -1,0 +1,10 @@
+{% extends 'navbar.html' %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+<h1> sites View</h1>
+    <br />
+    {%  for site in siteName %}
+    <p>{{ site.siteName }}</p>
+    {%  endfor %}
+
+{% endblock %}

@@ -8,6 +8,7 @@ class Sites(db.Model):
     siteName = db.Column(db.String(30))
     SysAdminName = db.Column(db.String(10))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    SysAdminPhone = db.Column(db.String(20))
 
 
 class Servers(db.Model):
