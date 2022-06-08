@@ -1,0 +1,38 @@
+/*body, html {
+    width: 100%;
+}
+.header{
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.form-control {
+    width: 30% !important;
+    border: 2px solid red;
+    border-radius: 4px;
+    display: contents;
+    z-index: 200;
+}
+.container{
+    height: 100%;
+    position: relative !important;
+    z-index: 2000 !important;
+    background-size: cover !important;
+    background-position: center;
+    padding: 20px !important;
+    margin: 20px !important;
+    z-index: 200 !important;
+
+
+}
+.jumbotron {
+ background-image: url(../Images/Beach.webp);
+ background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+*/

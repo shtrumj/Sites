@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1 class="header" xmlns="http://www.w3.org/1999/html">Add Server</h1>
+    <form action="" method="post" novalidate class="bg-light form-group">
+        {{ form.csrf_token }}
+        <div class="container jumbotron shadow form-group" >
+
+            <div class="mb-3 form-group">
+                {{ form.SiteName.label }}
+                {{ form.SiteName(size=10, class_="form-control col") }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.HOST_IP.label(class="form-label") }}
+                {{ form.HOST_IP(size=20, class_="form-control") }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.HOSTType.label(class="form-label") }}
+                {{ form.HOSTType(size=10, class_="form-control") }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.serverName.label(class="form-label") }}
+                {{ form.serverName(size=15, class_="form-control") }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.IPAddress.label(class="form-label") }}
+                {{ form.IPAddress(size=15, class_="form-control") }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.OS.label(class="form-label") }}
+                {{ form.OS(size=10, class_="form-control") }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.HOST_ILOM_IP.label(class="form-label") }}
+                {{ form.HOST_ILOM_IP(size=20, class_="form-control") }}
+            </div>
+            <input type="submit" value="Add Server" class="btn btn-primary form-group">
+        </div>
+    </form>
+
+{% endblock %}
+
+<!--   self.SiteName = SiteName
+self.serverName = serverName
+self.IPAddress = IPAddress
+self.os = OS
+self.HOST_IP = HOST_IP
+self.HOSTType = HOSTType
+self.HOST_ILOM_IP = HOST_ILOM_IP
+self.Date_Added = Date_Added-->
