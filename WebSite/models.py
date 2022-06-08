@@ -10,8 +10,6 @@ class Sites(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
 
-
-
 class Servers(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     SiteName = db.Column(db.String(30))
@@ -19,8 +17,8 @@ class Servers(db.Model):
     IPAddress = db.Column(db.String(30))
     OS = db.Column(db.String(30))
     HOST_IP = db.Column(db.String(30))
-    HOSTType = db.Column(db.String(30))
-    HOST_ILOM_IP = db.Column(db.String(20))
+    Hypervisor_IP = db.Column(db.String(30))
+    Hypervisor_ILOM_IP = db.Column(db.String(20))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
 
     def __init__(self, SiteName, serverName, IPAddress, OS, HOST_IP, HOSTType, HOST_ILOM_IP):
@@ -44,7 +42,6 @@ class Users(db.Model, UserMixin):
     password = db.Column(db.String(20))
     email = db.Column(db.String(20))
     sites = db.relationship('Sites')
-
 
     def __init__(self, firstName, password, email):
         self.firstName = firstName
