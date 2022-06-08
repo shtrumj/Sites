@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template
-
+from flask import Blueprint, render_template, request, flash
+from .models import Sites, Servers
+from . import db
 views = Blueprint('views', __name__)
 
 
@@ -10,13 +11,19 @@ def createerver():
 
 @views.route('/create-aSite', methods=['GET', 'POST'])
 def CreateASite():
-    return render_template('AddSite.html')
+    if request.method == 'POST':
+        siteName = request.form.get('siteName')
+        SysAdminName = request.form.get('SysAdminName')
+        if len(siteName)< 3:
+            flash('Site name must be larger than 3 characters', category='error')
+        elif len(SysAdminName)< 2:
+            flash('SysAdmin name must be greater than 2 characters', category='error')
+        else:
+            new_site = Sites(siteName=siteName,SysAdminName= SysAdminName)
+            db.session.add(new_site)
+            db.session.commit()
+    return render_template('AddSite.html', title="AddSite")
 """
-  if request.method == 'POST':
-        email = request.form.get('email')
-        firstName = request.form.get('firstName')
-        password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
 
         if len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')

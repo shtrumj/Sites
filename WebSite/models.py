@@ -5,7 +5,7 @@ from . import db
 
 class Sites(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    SiteName = db.Column(db.String(30))
+    siteName = db.Column(db.String(30))
     SysAdminName = db.Column(db.String(10))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
