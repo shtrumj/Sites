@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash
-from .models import Sites, Servers
+from .models import Sites, Servers, Employees
 from . import db
 views = Blueprint('views', __name__)
 
@@ -31,19 +31,16 @@ def CreateASite():
             db.session.add(new_site)
             db.session.commit()
     return render_template('AddSite.html', title="AddSite", Sites=Sites)
-"""
 
-        if len(email) < 4:
-            flash('Email must be greater than 3 characters.', category='error')
-        elif len(firstName) < 2:
-            flash('First name  must be grteater than 1 characters.',category='error')
-        elif password1 != password2:
-            flash('Password don\'t match.',category='error')
-        elif len(password1)< 7 :
-            flash('Password must be at least 7 characters',category='error')
-        else:
-            new_user = Users(email=email, firstName=firstName, password=generate_password_hash(password1, method='sha256'))
-            db.session.add(new_user)
-            db.session.commit()
-            flash('Account has been Created!',category='success')
-            return redirect(url_for('views.test'))"""
+@views.route('/Employees', methods=['GET','POST'])
+def AddEmployees():
+    if request.method == 'POST':
+        firstName = request.form.get('firstName')
+        lastName = request.form.get('lastName')
+        email = request.form.get('email')
+        cellPhone = request.form.get('cellPhone')
+        birthDay = request.form.get('birthDay')
+        new_employee = Employees(firstName=firstName, lastName=lastName, email=email, cellPhone=cellPhone,birthDay=birthDay)
+        db.session.add(new_employee)
+        db.session.commit()
+    return render_template('AddEmployee.html',title='AddEmployee')

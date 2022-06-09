@@ -48,3 +48,20 @@ class Users(db.Model, UserMixin):
         self.firstName = firstName
         self.email = email
         self.password = password
+
+
+class Employees(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    firstName = db.Column(db.String(20))
+    lastName = db.Column(db.String(20))
+    email = db.Column(db.String(20))
+    cellPhone = db.Column(db.String(20))
+    birthDay = db.Column(db.DateTime)
+
+    def __init__(self, firstName, lastName, email, cellPhone, birthDay):
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.cellPhone = cellPhone
+        self.birthDay = birthDay
+

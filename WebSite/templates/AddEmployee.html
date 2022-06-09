@@ -1,0 +1,39 @@
+{% extends 'navbar.html' %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+    <form method="POST">
+        <h3 align="center">Add New Employee</h3>
+        <div class="form-group">
+            <label for="firstName"> First name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter Employee first name" autofocus/>
+        </div>
+        <div class="form-group">
+            <label for="lastName"> Enter Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Employee last name"/>
+        </div>
+
+        <div class="form-group">
+            <label for="email"> EMail Address</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Employee Email address"/>
+        </div>
+        <div class="form-group">
+            <label for="cellPhone"> CellPhone Number</label>
+            <input type="text" class="form-control" id="cellPhone" name="cellPhone" placeholder="Enter Employee cellphone number"/>
+        </div>
+        <div class="form-group">
+            <label for="birthDay"> Birthday</label>
+            <input type="datetime-local" class="form-control" id="birthDay" name="birthDay" placeholder="Enter Employee Birthday Date"/>
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Create a New Employee</button>
+
+    </form>
+{% endblock %}
+<!--
+class Employees(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    firstName = db.Column(db.String(20))
+    lastName = db.Column(db.String(20))
+    email = db.Column(db.String(20))
+    cellPhone = db.Column(db.String(20))
+    birthDay = db.Column(db.DateTime) -->
