@@ -56,7 +56,7 @@ class Employees(db.Model):
     lastName = db.Column(db.String(20))
     email = db.Column(db.String(20))
     cellPhone = db.Column(db.String(20))
-    birthDay = db.Column(db.DateTime)
+    birthDay = db.Column()
 
     def __init__(self, firstName, lastName, email, cellPhone, birthDay):
         self.firstName = firstName

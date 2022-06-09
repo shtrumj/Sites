@@ -4,8 +4,11 @@
     <form method="POST">
         <h3 align="center">Add New Server</h3>
         <div class="form-group">
-            <label for="siteName"> Site Name</label>
-            <input type="text" class="form-control" id="siteName" name="siteName" placeholder="Enter Site Name" autofocus/>
+            <select class="form-select">
+            {% for SiteName  in sites %}
+            <option value="{{ SiteName.siteName }}">{{ SiteName.siteName }} </option>
+            {% endfor %}
+            </select>
         </div>
         <div class="form-group">
             <label for="serverName"> Enter Server Name</label>
@@ -13,7 +16,7 @@
         </div>
 
         <div class="form-group">
-            <label for="IPAddress"> Password</label>
+            <label for="IPAddress"> IP Address</label>
             <input type="text" class="form-control" id="IPAddress" name="IPAddress" placeholder="Enter Server IP Address"/>
         </div>
         <div class="form-group">

@@ -4,9 +4,10 @@ from . import db
 views = Blueprint('views', __name__)
 
 
-@views.route('/create-server', methods=['GET', 'POST'])
-def createerver():
-    return render_template('AddServer.html')
+@views.route('/add-server', methods=['GET', 'POST'])
+def addServer():
+    siteVar= Sites.query.all()
+    return render_template('AddServer.html',title="AddServer",sites=siteVar)
 
 
 @views.route('/sites-view', methods=['GET'])
@@ -14,10 +15,8 @@ def sitesView():
     siteVar = Sites.query.all()
     return render_template('SitesView.html', title="SitesView", siteName=siteVar )
 
-
 @views.route('/create-aSite', methods=['GET', 'POST'])
 def CreateASite():
-    Sites= Sites.query(siteName)
     if request.method == 'POST':
         siteName = request.form.get('siteName')
         SysAdminName = request.form.get('SysAdminName')

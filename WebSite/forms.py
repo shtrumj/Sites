@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
-from wtforms import StringField, PasswordField, EmailField
+from wtforms import StringField, PasswordField, EmailField,DateField
 from wtforms.validators import InputRequired
 
 
@@ -18,6 +18,14 @@ class Users(FlaskForm):
     UserName = StringField('User Name', validators=[InputRequired()])
     Password = PasswordField('Password', validators=[InputRequired()])
     emailAdd = EmailField('Email Address', validators=[InputRequired()])
+
+
+class Employees(FlaskForm):
+    firstName = StringField('Employee First Name', validators=[InputRequired()])
+    lastName = StringField('Employee Last Name', validators=[InputRequired()])
+    email = StringField('Email Address', validators=[InputRequired()])
+    cellPhone = StringField('Cellphone Number',validators=[InputRequired()])
+    birthDay = DateField('Birthday', format ='%d/%m/%Y')
 
 
     # https://codeloop.org/flask-wtf-registration-form-with-sqlalchemy/
